@@ -89,6 +89,8 @@ async updateProducstById(id,newObject){
     const productobuscado = producto.find(p => p.id===id  )   
 
     if (productobuscado){
+        
+     newObject.id = id
     producto.splice(producto.indexOf(productobuscado),1,newObject)
 
 

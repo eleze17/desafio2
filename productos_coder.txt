@@ -1,0 +1,1 @@
+[{"title":"Fernet branca","description":"Alcohol","price":3000,"thumbnail":"fernetcito.jpg","code":"FFF999","stock":1200,"id":3},{"title":"Lavandina","description":"Limpieza","price":450,"thumbnail":"fotolavandina.jpg","code":"ACB123","stock":800,"id":4}]
