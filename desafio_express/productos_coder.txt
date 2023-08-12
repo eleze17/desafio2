@@ -1,0 +1,1 @@
+[{"title":"Coca-Cola","description":"Bebible","price":600,"thumbnail":"fotococa.jpg","code":"ADK485","stock":300,"id":2},{"title":"Aspirina","description":"Salud","price":500,"thumbnail":"fotoaspirina.jpg","code":"JKL620","stock":1200,"id":3},{"title":"Lavandina","description":"Limpieza","price":450,"thumbnail":"fotolavandina.jpg","code":"ACB123","stock":800,"id":4}]
