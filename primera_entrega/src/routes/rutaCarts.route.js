@@ -23,8 +23,8 @@ rutaCarts.post('/', async (req, res) => {
 })
 rutaCarts.post('/:id/product/:pid', async (req, res) => {
   const { id, pid } = req.params
-  await manejador.addProductToCart(parseInt(id), parseInt(pid))
-  res.send(`Se agrego al carro id : ${id} el producto id : ${pid} `)
+  const resp = await manejador.addProductToCart(parseInt(id), parseInt(pid))
+  res.send(resp)
 })
 
 export default rutaCarts

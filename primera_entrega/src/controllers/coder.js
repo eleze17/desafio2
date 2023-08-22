@@ -152,7 +152,7 @@ export class CartManager {
     })
 
     await fs.writeFile(this.path, JSON.stringify(cart))
-    const mensaje = (`producto agregado al carrito  ${this.id} `)
+    const mensaje = (`Se agrego al carro id : ${idcart} el producto id : ${idprod} `)
     return mensaje
   }
 }
