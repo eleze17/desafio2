@@ -11,6 +11,7 @@ export class ProductManager {
     let mensaje = ''
     // validar tenga todos los campos
     const validadcampos = Object.values(product)
+    const prods = JSON.parse(await fs.readFile(this.path, 'utf-8'))
     validadcampos.forEach(element => {
       if (!ok) {
         return
@@ -28,7 +29,7 @@ export class ProductManager {
 
       let encontrado = false
       if (product.id > 0) {
-        this.products.forEach((p) => {
+        prods.forEach((p) => {
           if (p.code === validacionCode) {
             encontrado = true
             mensaje = (p.code + '  Codigo Existente')
@@ -40,8 +41,9 @@ export class ProductManager {
       console.log(encontrado)
 
       if ((ok && encontrado === false) || product.id === 1) {
-        this.products.push(product)
-        await fs.writeFile(this.path, JSON.stringify(this.products))
+        const prods = JSON.parse(await fs.readFile(this.path, 'utf-8'))
+        prods.push(product)
+        await fs.writeFile(this.path, JSON.stringify(prods))
         mensaje = (`producto ${product.title} agregado `)
       }
     }
@@ -59,7 +61,7 @@ export class ProductManager {
     const productobuscado = producto.filter(
       p => p.id === id
     )
-    return productobuscado.length === 0 ? 'Not Found' : productobuscado
+    return productobuscado.length === 0 ? 'Not Found' : productobuscado[0]
   }
 
   async deleteProducstById (id) {
@@ -116,8 +118,9 @@ export class CartManager {
   }
 
   async addCart (cart) {
-    this.carts.push(cart)
-    await fs.writeFile(this.path, JSON.stringify(this.carts))
+    const cartarray = JSON.parse(await fs.readFile(this.path, 'utf-8')) // [{products:[{product:1,quantity:1}],id:1}]
+    cartarray.push(cart)
+    await fs.writeFile(this.path, JSON.stringify(cartarray))
     const mensaje = (`carrito ${cart.id} agregado `)
     return mensaje
   }
@@ -133,7 +136,7 @@ export class CartManager {
     const carritobuscado = cart.filter(
       c => c.id === id
     )
-    return carritobuscado.length === 0 ? 'Not Found' : carritobuscado
+    return carritobuscado.length === 0 ? 'Not Found' : carritobuscado[0]
   }
 
   async addProductToCart (idcart, idprod) {
