@@ -1,0 +1,3 @@
+[{"title":"COCA","description":"bebida","price":1500,"thumbnail":"['foto1.jpg','foto2.jpg','foto3.jpg']","code":"pepe","stock":90,"status":true,"category":"gaseosa","id":2},
+{"title":"Fernet","description":"bebida","price":1500,"thumbnail":"['foto1.jpg','foto2.jpg','foto3.jpg']","code":"JKL879","stock":90,"status":true,"category":"gaseosa","id":4},
+{"title":"arroz","description":"no se pasa","price":800,"thumbnail":"['foto1.jpg','foto2.jpg','foto3.jpg']","code":"J4479","stock":35,"status":true,"category":"legumbres","id":1}]
