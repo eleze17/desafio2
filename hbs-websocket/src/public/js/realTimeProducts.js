@@ -20,13 +20,17 @@ socket.on("respuestaProd", (productos) => {
             <th scope="row">${p.id} </th>
             </tr>`
         )
-})
-const bloquelimpio = bloque.join()
+})//limpio hijo si existe
+const cuerpotable = document.getElementById('tabla')
+const eliminardatosanterior = document.getElementById('bloqueainsertar')
+eliminardatosanterior?cuerpotable.removeChild(eliminardatosanterior):''
+
+//limpio bloque (las comas) y creo el elemento
+const bloquelimpio = bloque.join('')
 const bloqueainsertar = document.createElement('TBODY')
+bloqueainsertar.id='bloqueainsertar'
 bloqueainsertar.innerHTML= bloquelimpio
-//bloqueainsertar.appendChild(bloquelimpio)  
-const cuerpotable = document.getElementById('detalle')
-console.log(bloqueainsertar)
-cuerpotable.innerHTML= bloqueainsertar
+//agrego hijo
+cuerpotable.appendChild(bloqueainsertar)
 
 })
